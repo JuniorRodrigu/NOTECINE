@@ -1,4 +1,4 @@
-import './style.css';
+import './styles.css';
 function Form(){
 
     const movie = {
@@ -6,7 +6,7 @@ function Form(){
         image: "https://br.web.img3.acsta.net/pictures/19/11/29/17/57/5161763.jpg",
         title: "The Witcher",
         count: 2,
-        score: 4.5
+        score: 4.5,
     };
 return(
 
@@ -15,7 +15,7 @@ return(
     <div className="dsmovie-form-container">
     <img className="dsmovie-movie-card-image" src={movie.image} alt={movie.image} />
     <div className="dsmovie-card-bottom-container">
-        <h3>"The Witcher"</h3>
+        <h3>{movie.title}</h3>
         <form className="dsmovie-form">
             <div className="form-group dsmovie-form-group">
                 <label htmlFor="email">Informe seu email</label>
