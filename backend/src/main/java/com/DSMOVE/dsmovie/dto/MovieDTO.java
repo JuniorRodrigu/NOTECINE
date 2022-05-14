@@ -2,7 +2,7 @@ package com.DSMOVE.dsmovie.dto;
 
 import com.DSMOVE.dsmovie.entities.Movie;
 
-public class MDTO {
+public class MovieDTO {
 	private Long id;
 	private String title;
 	private Double score;
@@ -10,12 +10,12 @@ public class MDTO {
 	private String image;
 	
 	
-	public MDTO () {
+	public MovieDTO () {
 			
 	}
 
 
-	public MDTO(Long id, String title, Double score, Integer count, String image) {
+	public MovieDTO(Long id, String title, Double score, Integer count, String image) {
 		this.id = id;
 		this.title = title;
 		this.score = score;
@@ -23,7 +23,7 @@ public class MDTO {
 		this.image = image;
 	}
 
-	public MDTO(Movie movie){
+	public MovieDTO(Movie movie){
 		id = movie.getId();
 		title = movie.getTitle();
 		score = movie.getScore();

@@ -6,7 +6,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.DSMOVE.dsmovie.dto.MDTO;
+import com.DSMOVE.dsmovie.dto.MovieDTO;
 import com.DSMOVE.dsmovie.entities.Movie;
 import com.DSMOVE.dsmovie.repositories.MovieRepository;
 
@@ -15,18 +15,18 @@ public class MovieService {
 	@Autowired
 	private MovieRepository repository;
 	@Transactional(readOnly = true)
-	 public Page<MDTO> findAll(Pageable pageable) {
+	 public Page<MovieDTO> findAll(Pageable pageable) {
 		Page<Movie> result = repository.findAll(pageable);
-		Page<MDTO> page = result.map(x -> new  MDTO(x));
+		Page<MovieDTO> page = result.map(x -> new  MovieDTO(x));
 		return page;
 		
 	}
 	 
 	 @Transactional(readOnly = true)
 
-	 public MDTO findById(Long id){
+	 public MovieDTO findById(Long id){
 		   Movie result = repository.findById(id).get();
-		    MDTO dto = new MDTO(result);
+		    MovieDTO dto = new MovieDTO(result);
 		     return dto;
 	                  	
 }
